@@ -613,12 +613,18 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 			totalSize.height = max;
 		}
 	}
-	if (totalSize.width < minSize.width) {
-		totalSize.width = minSize.width;
-	} 
-	if (totalSize.height < minSize.height) {
-		totalSize.height = minSize.height;
-	}
+	if (CGSizeEqualToSize(minSize, CGSizeZero)) {
+        CGFloat maxLength = MAX(totalSize.width, labelSize.height);
+        totalSize.width = maxLength;
+        totalSize.height = maxLength;
+    } else {
+        if (totalSize.width < minSize.width) {
+            totalSize.width = minSize.width;
+        }
+        if (totalSize.height < minSize.height) {
+            totalSize.height = minSize.height;
+        }
+    }
 	
 	self.size = totalSize;
 }
