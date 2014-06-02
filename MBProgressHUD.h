@@ -537,7 +537,7 @@ typedef enum {
 
 @property(nonatomic) CGFloat radius;
 @property(nonatomic, MB_STRONG) UIColor *tintColor;
-@property(nonatomic, MB_WEAK) CGFloat saturationDeltaFactor;
+@property(nonatomic, assign) CGFloat saturationDeltaFactor;
 @property(nonatomic) UIImage *maskImage;
 
 ///Light color effect.
