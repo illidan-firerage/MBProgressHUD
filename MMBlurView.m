@@ -45,7 +45,7 @@
 }
 
 + (MMBlurView *) loadWithLocation:(CGPoint) point parent:(UIView *) view frame:(CGRect)frame{
-    MMBlurView *blur = [[MMBlurView alloc]initWithFrame:CGRectZero];
+    MMBlurView *blur = [[MMBlurView alloc]initWithFrame:frame];
     blur.parent = view;
     blur.location = point;
     return blur;
