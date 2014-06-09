@@ -197,7 +197,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		self.graceTime = 0.0f;
 		self.minShowTime = 0.0f;
 		self.removeFromSuperViewOnHide = NO;
-		self.minSize = CGSizeZero;
+		self.minSize = CGSizeMake(105, 105);
 		self.square = NO;
         //Only support iOS7 above now
         self.blur = iOS_7_Above;
@@ -677,7 +677,10 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
     
     //set the blur view
     if(self.blur){
-        if(!self.blurView){
+        if(!CGRectEqualToRect(self.blurView.frame, boxRect)){
+            [self.blurView removeFromSuperview];
+            self.blurView = nil;
+            
             self.blurView = [MMBlurView loadWithLocation:boxRect.origin parent:self.superview frame:boxRect];
             [self addSubview:self.blurView];
             [self sendSubviewToBack:self.blurView];

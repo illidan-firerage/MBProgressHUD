@@ -417,7 +417,7 @@ typedef void (^MBProgressHUDCompletionBlock)();
 @property (assign) float progress;
 
 /**
- * The minimum size of the HUD bezel. Defaults to CGSizeZero (no minimum size).
+ * The minimum size of the HUD bezel. Defaults to CGSizeMake(105, 105).
  */
 @property (assign) CGSize minSize;
 
