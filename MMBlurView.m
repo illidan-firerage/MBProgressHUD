@@ -56,12 +56,17 @@
     if(self){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self addSubview:self.backgroundImageView];
-        self.backgroundImageView.layer.cornerRadius = 10.0;
         self.backgroundImageView.clipsToBounds = YES;
         self.backgroundImageView.layer.masksToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
     }
     return self;
+}
+
+- (void)setCornerRadius:(CGFloat)cornerRadius
+{
+    _cornerRadius = cornerRadius;
+    self.backgroundImageView.layer.cornerRadius = _cornerRadius;
 }
 
 - (void)setFrame:(CGRect)frame{

@@ -18,6 +18,8 @@ typedef enum {
 
 @interface MMBlurView : UIView
 
+@property (nonatomic, assign) CGFloat cornerRadius;
+
 + (MMBlurView *) load:(UIView *) view;
 + (MMBlurView *) loadWithLocation:(CGPoint) point parent:(UIView *) view;
 + (MMBlurView *) loadWithLocation:(CGPoint) point parent:(UIView *) view frame:(CGRect)frame;
